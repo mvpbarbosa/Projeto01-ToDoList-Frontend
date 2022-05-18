@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="icon" href="./assets/images/logo-friendzone-head.png" />
+    <title>FriendZone</title>
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <section class="header">
+        <div class="Titulo">
+          <img src="./assets/images/logo-friendzone-head.png" alt="" />
+          <h1>FriendZone</h1>
+        </div>
+
+        <div class="Pesquisa">
+          <button type="number" onclick="findByIdPublicacoes()">
+            <img src="./assets/images/lupa-icon.png" alt="" />
+          </button>
+          <input
+            type="text"
+            id="idPublicacao"
+            placeholder="Digite o ID da publicação e clique na lupa"
+          />
+        </div>
+
+        <section class="button-modal-create">
+          <button type="button" class="default-button" onclick="abrirModal()">
+            Criar nova publicação
+          </button>
+        </section>
+      </section>
+    </header>
+
+    <main>
+      <section class="modal-overlay" id="overlay">
+        <div class="modal">
+          <div class="modal-header">
+            <h2 id="title-header-modal">Criar uma publicação</h2>
+            <a onclick="fecharModalCadastro()" class="close-modal">x</a>
+          </div>
+
+          <div class="modal-body">
+            <div>
+              <input
+                type="text"
+                name="nome"
+                id="nome"
+                placeholder="Nome de usuário"
+              />
+              <textarea
+                type="text"
+                name="texto"
+                id="texto"
+                placeholder="Digite um texto"
+                rows="5"
+              ></textarea>
+              <input
+                type="text"
+                name="foto"
+                id="foto"
+                placeholder="Link da foto de perfil"
+              />
+              <button
+                onclick="createPublicacao(), fecharModalCadastro(), location.reload()"
+                class="default-button"
+              >
+                Cadastrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="Publicacoes">
+        <div id="publicacaoEscolhidaDiv"></div>
+        <h2 id="PublicacoesTitulo">Publicações</h2>
+      </section>
+    </main>
+
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
